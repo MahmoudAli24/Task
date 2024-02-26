@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300..700&display=swap");
+:root {
+  --nav-bar-color: #043f56;
+  --main-color: #3ec747;
+  --black-alt: #1a1a1a;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: #eee !important;
+}
+main {
+  height: calc(100vh - 63.4px);
+}
+
+/* Start Navbar */
+.navbar {
+  background-color: #043f56;
+}
+/* End Navbar */
+/* Start Side Nav */
+.side-nav {
+  height: calc(100vh - 63.4px);
+  width: 255px;
+  position: fixed;
+  z-index: 1;
+  top: 63.4px;
+  right: 0;
+  background-color: var(--main-color);
+  overflow-x: hidden;
+  padding: 15px 20px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.side-nav li:hover a div {
+  color: var(--main-color);
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+}
+
+.active-link {
+  color: #51e75b;
+}
+/* End Side Nav */
+.layout {
+  margin-right: 266px;
+  margin-left: 10px;
+}
+
+.bg-main-color {
+  background-color: var(--main-color);
+}
+.bg-light-green {
+  background-color: var(--nav-bar-color);
+}
+.bg-black-alt {
+  background-color: var(--black-alt);
+}
+.pe-clicked {
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+.routat {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+.modal-backdrop {
+  z-index: 1;
+}
+
+/* Start Swiper */
+#lesson-info {
+  height: calc(100vh - 63.4px);
+  width: 100%;
+  padding: 0 20px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.swiper {
+  height: 100vh;
+}
+
+/* End Swiper */
+.images {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dropzone {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #ccc;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropzone div {
+  width: 100px;
+  height: 50px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.draggable {
+  width: 100px;
+  height: 50px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 50px;
+  cursor: move;
+}
+.image-container {
+  height: fit-content;
+  margin-top: 50px;
+}
+.image-container img {
+  width: 300px;
+  height: 300px;
+}

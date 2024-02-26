@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>lessons</title>
+  </head>
+  <body dir="rtl">
+    <nav
+      class="navbar navbar-expand-lg border-bottom border-4 border-success position-sticky top-0 z-3"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand text-success" href="#">
+          <img src="../assets/icons/main-icon.ico" alt="logo" />
+          دار المنهل ناشرون
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                School 1
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">School 2</a></li>
+                <li><a class="dropdown-item" href="#">School 3</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">School 4</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#"> English </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="../assets/icons/bell.svg" alt="bell" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="../assets/icons/message-square.svg" alt="message" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <!--Start Side nav -->
+      <div class="bg-white side-nav">
+        <ul class="list-unstyled p-0 pe-2">
+          <li class="mb-4">
+            <a
+              href="../index.html"
+              class="text-info-emphasis text-decoration-none"
+            >
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-book-bookmark fa-xl"></i>
+                </span>
+                <span class="fs-5">الكتب</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3 active-link">
+                <span>
+                  <i class="fa-solid fa-fw fa-book-open-reader fa-xl"></i>
+                </span>
+                <span class="fs-5">الدروس</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-chalkboard fa-xl"></i>
+                </span>
+                <span class="fs-5">الصفوف الإفتراضية</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-pencil fa-xl"></i>
+                </span>
+                <span class="fs-5">الواجبات البيتية</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-clipboard-question fa-xl"></i>
+                </span>
+                <span class="fs-5">الاختبارات</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-users-line fa-xl"></i>
+                </span>
+                <span class="fs-5">الشعب</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-people-group"></i>
+                </span>
+                <span class="fs-5">المجموعات</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-user-group"></i>
+                </span>
+                <span class="fs-5">الطلاب</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-chart-column"></i>
+                </span>
+                <span class="fs-5">مستوى الأداء</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-toolbox"></i>
+                </span>
+                <span class="fs-5">أدوات</span>
+              </div>
+            </a>
+          </li>
+          <li class="mb-4">
+            <a href="#" class="text-info-emphasis text-decoration-none">
+              <div class="d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-fw fa-scissors"></i>
+                </span>
+                <span class="fs-5">المحررات</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--End Side nav -->
+      <!-- Start Lessons Layout -->
+      <section class="layout">
+        <!-- breadcrumb -->
+        <nav aria-label="">
+          <ol class="breadcrumb gap-2 mt-3 me -2">
+            <li>
+              <a href="../index.html" class="text-black text-decoration-none">
+                الرئيسية</a
+              >
+            </li>
+            <li>/</li>
+            <li class="" aria-current="page">الدروس</li>
+          </ol>
+        </nav>
+        <div class="card py-3">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="input-group d-flex w-25" dir="ltr">
+                    <span
+                      class="input-group-text bg-main-color text-white"
+                      id="basic-addon1"
+                    >
+                      <i class="fa-solid fa-search"></i>
+                    </span>
+                    <input
+                      dir="rtl"
+                      type="text"
+                      class="form-control"
+                      aria-describedby="basic-addon1"
+                      placeholder="ابحث عن درس"
+                    />
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-center gap-2"
+                  >
+                    <span>
+                      <span class="px-1 bg-success text-white pe-clicked">
+                        <i class="fa-solid fa-table-cells-large fa-xl"></i>
+                      </span>
+                      <span class="px-1 bg-main-color text-white pe-clicked">
+                        <i class="fa-solid fa-list fa-xl"></i>
+                      </span>
+                    </span>
+                    <span>
+                      <span
+                        class="px-1 bg-success text-white pe-clicked"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModall"
+                      >
+                        <i class="fa-solid fa-square-plus fa-xl"></i>
+                      </span>
+                      <div
+                        class="modal fade"
+                        id="exampleModall"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-dialog-centered modal-xl"
+                        >
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                              <h1
+                                class="modal-title fs-5"
+                                id="exampleModalLabel"
+                              >
+                                إضافة درس
+                              </h1>
+                            </div>
+                            <div class="modal-body">
+                              <form>
+                                <div class="row">
+                                  <div class="col-6">
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>العنوان</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <input
+                                          type="text"
+                                          class="form-control form-control"
+                                          placeholder="Lesson Title"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>الماده الدراسية</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <select
+                                          class="form-select form-select-sm"
+                                          aria-label="Small select example"
+                                        >
+                                          <option selected>
+                                            Select Subject
+                                          </option>
+                                          <option value="1">Subject 1</option>
+                                          <option value="2">Subject 2</option>
+                                          <option value="3">Subject 3</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>تاريخ البدء</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <input
+                                          type="date"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>الصفوف</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <select
+                                          class="form-select form-select-sm"
+                                          aria-label="Small select example"
+                                        >
+                                          <option selected>Select Class</option>
+                                          <option value="1">Class 1</option>
+                                          <option value="2">Class 2</option>
+                                          <option value="3">Class 3</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>العلامة العظمى</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <input
+                                          type="number"
+                                          class="form-control form-control"
+                                          placeholder="Max Mark"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>الوصف</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <input
+                                          type="text"
+                                          class="form-control form-control"
+                                          placeholder="Description"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>الكتب</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <select
+                                          class="form-select form-select-sm"
+                                          aria-label="Small select example"
+                                        >
+                                          <option selected>Select Book</option>
+                                          <option value="1">Book 1</option>
+                                          <option value="2">Book 2</option>
+                                          <option value="3">Book 3</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>تاريخ الانتهاء</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <input
+                                          type="date"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>العلامة الصغرى</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <input
+                                          type="number"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="row align-items-center mb-3">
+                                      <div class="col-2">
+                                        <label>رقم الصفحة</label>
+                                      </div>
+                                      <div class="col-10">
+                                        <input
+                                          type="number"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                              <button type="button" class="btn btn-primary">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <!--Start Selectors -->
+                <div class="row mt-3 align-items-center">
+                  <div class="col-12 col-xl-6 mb-3">
+                    <div class="row align-items-center">
+                      <div class="col-2">
+                        <label class="fw-bold"> الصفوف</label>
+                      </div>
+                      <div class="col-10">
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>الصف الأول</option>
+                          <option value="1">الصف الثاني</option>
+                          <option value="2">الصف الثالث</option>
+                          <option value="3">الصف الرابع</option>
+                          <option value="4">الصف الخامس</option>
+                          <option value="5">الصف السادس</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mb-3">
+                    <div class="row align-items-center">
+                      <div class="col-2">
+                        <label class="fw-bold">المواد الدراسية</label>
+                      </div>
+                      <div class="col-10">
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>اللغة العربية</option>
+                          <option value="1">اللغة الإنجليزية</option>
+                          <option value="2">الرياضيات</option>
+                          <option value="3">العلوم</option>
+                          <option value="4">التربية الإسلامية</option>
+                          <option value="5">التربية الوطنية</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6">
+                    <div class="row align-items-center">
+                      <div class="col-2">
+                        <label class="fw-bold"> الكتب</label>
+                      </div>
+                      <div class="col-10">
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>الكتاب الأول</option>
+                          <option value="1">الكتاب الثاني</option>
+                          <option value="2">الكتاب الثالث</option>
+                          <option value="3">الكتاب الرابع</option>
+                          <option value="4">الكتاب الخامس</option>
+                          <option value="5">الكتاب السادس</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End Selectors -->
+                <!-- Start Lessons -->
+                <div
+                  class="row row-cols-2 row-cols-lg-5 row-cols-md-3 row-cols-sm-1 g-2 g-lg-3 mt-3"
+                  id="lessons"
+                >
+                  <!-- Lessons will be dynamically added here -->
+                </div>
+                <nav aria-label="..." dir="ltr">
+                  <ul class="pagination" id="pagination">
+                    <!-- Pagination buttons will be dynamically added here -->
+                  </ul>
+                </nav>
+                <!-- End Lessons -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Lessons Layout -->
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+      integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../assets/js/lessons.js"></script>
+  </body>
+</html>

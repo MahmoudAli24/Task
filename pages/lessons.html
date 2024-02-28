@@ -505,6 +505,52 @@
                   class="row row-cols-2 row-cols-lg-5 row-cols-md-3 row-cols-sm-1 g-2 g-lg-3 mt-3"
                   id="lessons"
                 >
+                  <div class="col mb-3">
+                    <div class="card">
+                      <div class="position-relative">
+                        <div
+                          class="position-absolute card-icons bg-icon w-100 px-2 py-1"
+                        >
+                          <span class="text-white" id="lesson-modals">
+                            <span
+                              data-bs-toggle="modal"
+                              data-bs-target="#edit-lesson-model"
+                            >
+                              <i
+                                class="fa-solid fa-pencil fa-fw pe-clicked"
+                                id="edit-btn-model"
+                              ></i>
+                            </span>
+                            <i
+                              class="fa-solid fa-trash-can fa-fw pe-clicked"
+                            ></i>
+                            <i
+                              class="fa-solid fa-folder-plus fa-fw pe-clicked"
+                            ></i>
+                          </span>
+                        </div>
+                        <a
+                          href="./lesson-info.html?id=1"
+                          class="text-decoration-none"
+                        >
+                          <img
+                            src="../assets/images/lessons/lesson-2.jpg"
+                            class="object-fit w-100"
+                            alt="..."
+                          />
+                        </a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">الدرس الأول</h5>
+                        <p
+                          class="card-text text-body-secondary d-flex justify-content-xl-between flex-column flex-xl-row"
+                        >
+                          <span> اللغة العربية </span>
+                          <span>2021-01-02</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   <!-- Lessons will be dynamically added here -->
                 </div>
                 <nav aria-label="..." dir="ltr">
@@ -520,6 +566,202 @@
       </section>
       <!-- End Lessons Layout -->
     </main>
+    <div
+      class="modal fade"
+      id="edit-lesson-model"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">إضافة درس</h1>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-6">
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>العنوان</label>
+                    </div>
+                    <div class="col-10">
+                      <input
+                        type="text"
+                        class="form-control form-control"
+                        placeholder="Lesson Title"
+                        id="lesson-title"
+                      />
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>الماده الدراسية</label>
+                    </div>
+                    <div class="col-10">
+                      <select
+                        class="form-select form-select-sm"
+                        aria-label="Small select example"
+                        id="lesson-subject"
+                      ></select>
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>تاريخ البدء</label>
+                    </div>
+                    <div class="col-10">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="lesson-start-date"
+                      />
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>الصفوف</label>
+                    </div>
+                    <div class="col-10">
+                      <select
+                        class="form-select form-select-sm"
+                        aria-label="Small select example"
+                      >
+                        <option selected>Select Class</option>
+                        <option value="1">Class 1</option>
+                        <option value="2">Class 2</option>
+                        <option value="3">Class 3</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>العلامة العظمى</label>
+                    </div>
+                    <div class="col-10">
+                      <input
+                        type="number"
+                        class="form-control form-control"
+                        placeholder="Max Mark"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>الوصف</label>
+                    </div>
+                    <div class="col-10">
+                      <input
+                        type="text"
+                        class="form-control form-control"
+                        placeholder="Description"
+                      />
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>الكتب</label>
+                    </div>
+                    <div class="col-10">
+                      <select
+                        class="form-select form-select-sm"
+                        aria-label="Small select example"
+                      >
+                        <option selected>Select Book</option>
+                        <option value="1">Book 1</option>
+                        <option value="2">Book 2</option>
+                        <option value="3">Book 3</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>تاريخ الانتهاء</label>
+                    </div>
+                    <div class="col-10">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="lesson-end-date"
+                      />
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>العلامة الصغرى</label>
+                    </div>
+                    <div class="col-10">
+                      <input type="number" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-3">
+                    <div class="col-2">
+                      <label>رقم الصفحة</label>
+                    </div>
+                    <div class="col-10">
+                      <input type="number" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="delete-lesson-model"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          </div>
+          <div class="modal-body">
+            <h4>هل أنت متأكد من حذف الدرس؟</h4>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

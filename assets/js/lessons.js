@@ -18,18 +18,33 @@ function displayLessons(lessons) {
 
   currentLessons.forEach(lesson => {
     html += `<div class="col mb-3 fade-in">
+    <div class="card">
+  <div class="position-relative">
+    <div class="position-absolute card-icons bg-icon w-100 px-2 py-1">
+      <span class="text-white">
+        <span data-bs-toggle="modal" data-bs-target="#edit-lesson-model" id="edit-lesson-btn" >
+          <i class="fa-solid fa-pencil fa-fw pe-clicked"></i>
+        </span>
+        <span data-bs-toggle="modal" data-bs-target="#delete-lesson-model">
+        <i class="fa-solid fa-trash-can fa-fw pe-clicked"></i>
+        </span>
+        <a href="./edit-lesson.html?id=${lesson.id}" class="text-white">
+        <i class="fa-solid fa-folder-plus fa-fw pe-clicked"></i>
+        </a>
+      </span>
+    </div>
     <a href="./lesson-info.html?id=${lesson.id}" class="text-decoration-none">
-      <div class="card">
-        <img src="${lesson.image}" class="object-fit" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title fw-bold">${lesson.title}</h5>
-          <p class="card-text text-body-secondary d-flex justify-content-xl-between flex-column flex-xl-row">
-            <span>${lesson.subject}</span>
-            <span>${lesson.date}</span>
-          </p>
-        </div>
-      </div>
+      <img src="${lesson.image}" class="object-fit w-100" alt="..." />
     </a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title fw-bold">${lesson.title}</h5>
+    <p class="card-text text-body-secondary d-flex justify-content-xl-between flex-column flex-xl-row">
+      <span>${lesson.subject}</span>
+      <span>${lesson.date}</span>
+    </p>
+  </div>
+</div>
     </div>`;
   });
 
@@ -82,3 +97,26 @@ fetchData()
   .catch(error => {
     console.error(error);
   });
+
+// when window is loaded
+window.onload = async function () {
+  let editLessonBtn = document.querySelectorAll('#edit-lesson-btn');
+  let lessonTitle = document.getElementById('lesson-title');
+  let lessonSubject = document.getElementById('lesson-subject');
+  let lessonStartDate = document.getElementById('lesson-start-date');
+  let lessonEndDate = document.getElementById('lesson-end-date');
+
+  let data = await fetchData();
+
+  editLessonBtn.forEach((btn, index) => {
+    btn.addEventListener('click', function () {
+      console.log(data[index]);
+      lessonTitle.value = data[index].title;
+      lessonSubject.innerHTML = `
+        <option value="${data[index].subject}" selected>${data[index].subject}</option>
+        `
+      lessonStartDate.setAttribute("value", data[index]["startDate"])
+      lessonEndDate.setAttribute("value", data[index]["endDate"])
+    });
+  });
+}

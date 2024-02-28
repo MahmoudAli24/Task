@@ -3,6 +3,7 @@
   --nav-bar-color: #043f56;
   --main-color: #3ec747;
   --black-alt: #1a1a1a;
+  --bg-icon: #414550cc;
 }
 * {
   margin: 0;
@@ -73,6 +74,9 @@ main {
 }
 .bg-black-alt {
   background-color: var(--black-alt);
+}
+.bg-icon {
+  background-color: var(--bg-icon);
 }
 .pe-clicked {
   cursor: pointer;
@@ -156,4 +160,24 @@ main {
 .image-container img {
   width: 300px;
   height: 300px;
+}
+
+#lessons .card .card-icons {
+  bottom: -30px;
+  opacity: 0;
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+}
+
+#lessons .card:hover .card-icons {
+  bottom: 0;
+  opacity: 1;
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
 }

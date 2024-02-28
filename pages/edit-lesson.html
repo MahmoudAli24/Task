@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Edit Info</title>
+  </head>
+  <body dir="rtl">
+    <nav
+      class="navbar navbar-expand-lg border-bottom border-4 border-success position-sticky top-0 z-3"
+    >
+      <div class="container-fluid">
+        <p class="navbar-brand text-white m-0" id="lessons-title">Logo</p>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav align-items-center gap-3">
+            <li>
+              <span class="text-white">
+                <img
+                  src="../assets/images/user.png"
+                  alt="User"
+                  class="d-inline-block w-25 ms-2"
+                />
+                User
+              </span>
+            </li>
+            <li class="nav-item">
+              <span class="text-white pe-clicked">
+                <i class="fa-solid fa-floppy-disk fa-xl"></i>
+              </span>
+            </li>
+            <li class="nav-item">
+              <span class="text-white pe-clicked">
+                <i class="fa-regular fa-eye fa-xl"></i>
+              </span>
+            </li>
+            <li>
+              <a href="./lessons.html" class="text-white text-decoration-none">
+                <i
+                  class="fa-solid fa-arrow-right-from-bracket fa-xl routat text-white"
+                ></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div id="lesson-info">
+        <div class="row">
+          <div class="col-3 position-relative">
+            <div thumbsSlider="" class="swiper mySwiper">
+              <div class="swiper-wrapper" id="lesson-data-1"></div>
+            </div>
+            <div
+              id="add-media-btn"
+              class="position-absolute top-0 z-1 text-center w-100 bg-white p-2 cursor-pointer fw-bold text-body-tertiary pe-clicked"
+            >
+              <span>
+                إضافة وسائط
+                <i class="fa-solid fa-plus fa-lg"></i>
+              </span>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="swiper mySwiper2">
+              <div class="swiper-wrapper" id="lesson-data-2"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Modals -->
+    <div
+      class="modal fade"
+      id="mediaModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          </div>
+          <div class="modal-body" id="modalContent">
+            <div class="row">
+              <div class="col-4">
+                <div class="card pe-clicked">
+                  <img
+                    src="../assets/images/media.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p
+                      class="card-title text-center text-body-tertiary fw-bold mb-0"
+                    >
+                      وسائط المنهل
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card pe-clicked">
+                  <img
+                    src="../assets/images/library.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p
+                      class="card-title text-center text-body-tertiary fw-bold mb-0"
+                    >
+                      مكتبة الوسائط
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card pe-clicked">
+                  <img
+                    src="../assets/images/rich.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p
+                      class="card-title text-center text-body-tertiary fw-bold mb-0"
+                    >
+                      محرر الصفحات
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="mediaModalCards"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          </div>
+          <div class="modal-body" id="modalContent">
+            <div class="fillter">
+              <!-- Make Selection -->
+              <div class="row">
+                <div class="col">
+                  <div class="input-group mb-3" dir="ltr">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      dir="rtl"
+                      id="type-filter"
+                    >
+                      <option value="all" selected>اختر...</option>
+                      <option value="الاصوات">الاصوات</option>
+                      <option value="الفيديوهات">الفيديوهات</option>
+                      <option value="الاختبارات">الاختبارات</option>
+                      <option value="المسابقات">المسابقات</option>
+                    </select>
+                    <span class="input-group-text" id="basic-addon1"
+                      >النوع</span
+                    >
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group mb-3" dir="ltr">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      dir="rtl"
+                      id="subject-filter"
+                    >
+                      <option value="all" selected>اختر...</option>
+                      <option value="اللغة العربية">اللغة العربية</option>
+                      <option value="الرياضيات">الرياضيات</option>
+                      <option value="العلوم">العلوم</option>
+                      <option value="اللغة الانجليزية">اللغة الانجليزية</option>
+                    </select>
+                    <span class="input-group-text" id="basic-addon1"
+                      >الماده الدراسية</span
+                    >
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group mb-3" dir="ltr">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      dir="rtl"
+                      id="age-filter"
+                    >
+                      <option value="all" selected>اختر...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                    <span class="input-group-text" id="basic-addon1"
+                      >العمر</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="row row-cols-2 row-cols-lg-5 row-cols-md-3 row-cols-sm-1 g-2 g-lg-3 mt-3"
+              id="modalCardsContent"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+      integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.26/dist/interact.min.js"></script>
+    <script src="../assets/js/edit-lesson.js"></script>
+  </body>
+</html>

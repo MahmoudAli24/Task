@@ -1,0 +1,170 @@
+[
+  {
+    "id": 3,
+    "title": "الدرس الثالث",
+    "subject": "العلوم",
+    "image": "../assets/images/lessons/pic-4.jpg",
+    "class": "الصف الرابع",
+    "type": "المسابقات",
+    "age": 2,
+    "img-1": "../assets/images/lessons/door-1.jpg",
+    "img-2": "../assets/images/lessons/doorrr.jpeg",
+    "question": "اسحب اكلمة الدالة على الصورة إالى المكان الصحيح",
+    "answer-1": {
+      "text": "مفتوح",
+      "correct": true
+    },
+    "answer-2": {
+      "text": "مغلق",
+      "correct": true
+    },
+    "answer-3": {
+      "text": "لين",
+      "correct": false
+    },
+    "answer-4": {
+      "text": "صلب",
+      "correct": false
+    }
+  },
+  {
+    "id": 4,
+    "title": "الدرس الرابع",
+    "subject": "الرياضيات",
+    "image": "../assets/images/lessons/pic-2.jpg",
+    "class": "الصف الخامس",
+    "type": "الاختبارات",
+    "age": 1,
+    "img-1": "../assets/images/lessons/door-1.jpg",
+    "img-2": "../assets/images/lessons/doorrr.jpeg",
+    "question": "اسحب اكلمة الدالة على الصورة إالى المكان الصحيح",
+    "answer-1": {
+      "text": "مفتوح",
+      "correct": true
+    },
+    "answer-2": {
+      "text": "مغلق",
+      "correct": true
+    },
+    "answer-3": {
+      "text": "لين",
+      "correct": false
+    },
+    "answer-4": {
+      "text": "صلب",
+      "correct": false
+    }
+  },
+  {
+    "id": 5,
+    "title": "الدرس الخامس",
+    "subject": "اللغة العربية",
+    "image": "../assets/images/lessons/pic-3.jpg",
+    "class": "الصف السادس",
+    "type": "المسابقات",
+    "age": 3,
+    "img-1": "../assets/images/lessons/door-1.jpg",
+    "img-2": "../assets/images/lessons/doorrr.jpeg",
+    "question": "اسحب اكلمة الدالة على الصورة إالى المكان الصحيح",
+    "answer-1": {
+      "text": "مفتوح",
+      "correct": true
+    },
+    "answer-2": {
+      "text": "مغلق",
+      "correct": true
+    },
+    "answer-3": {
+      "text": "لين",
+      "correct": false
+    },
+    "answer-4": {
+      "text": "صلب",
+      "correct": false
+    }
+  },
+  {
+    "id": 6,
+    "title": "الدرس السادس",
+    "subject": "العلوم",
+    "image": "../assets/images/lessons/pic-4.jpg",
+    "class": "الصف السابع",
+    "type": "العاب",
+    "age": 1,
+    "img-1": "../assets/images/lessons/door-1.jpg",
+    "img-2": "../assets/images/lessons/doorrr.jpeg",
+    "question": "اسحب اكلمة الدالة على الصورة إالى المكان الصحيح",
+    "answer-1": {
+      "text": "مفتوح",
+      "correct": true
+    },
+    "answer-2": {
+      "text": "مغلق",
+      "correct": true
+    },
+    "answer-3": {
+      "text": "لين",
+      "correct": false
+    },
+    "answer-4": {
+      "text": "صلب",
+      "correct": false
+    }
+  },
+  {
+    "id": 7,
+    "title": "الدرس السابع",
+    "subject": "الرياضيات",
+    "image": "../assets/images/lessons/pic-2.jpg",
+    "class": "الصف الثامن",
+    "type": "الاصوات",
+    "age": 3,
+    "img-1": "../assets/images/lessons/door-1.jpg",
+    "img-2": "../assets/images/lessons/doorrr.jpeg",
+    "question": "اسحب اكلمة الدالة على الصورة إالى المكان الصحيح",
+    "answer-1": {
+      "text": "مفتوح",
+      "correct": true
+    },
+    "answer-2": {
+      "text": "مغلق",
+      "correct": true
+    },
+    "answer-3": {
+      "text": "لين",
+      "correct": false
+    },
+    "answer-4": {
+      "text": "صلب",
+      "correct": false
+    }
+  },
+  {
+    "id": 8,
+    "title": "الدرس الثامن",
+    "subject": "اللغة العربية",
+    "image": "../assets/images/lessons/pic-3.jpg",
+    "class": "الصف التاسع",
+    "type": "الفيديوهات",
+    "age": 2,
+    "img-1": "../assets/images/lessons/door-1.jpg",
+    "img-2": "../assets/images/lessons/doorrr.jpeg",
+    "question": "اسحب اكلمة الدالة على الصورة إالى المكان الصحيح",
+    "answer-1": {
+      "text": "مفتوح",
+      "correct": true
+    },
+    "answer-2": {
+      "text": "مغلق",
+      "correct": true
+    },
+    "answer-3": {
+      "text": "لين",
+      "correct": false
+    },
+    "answer-4": {
+      "text": "صلب",
+      "correct": false
+    }
+  }
+]

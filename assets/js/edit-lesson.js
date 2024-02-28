@@ -1,26 +1,94 @@
-
-// get lesson info from the URL and display it on the page
 async function getLessonInfo() {
   const urlParams = new URLSearchParams(window.location.search);
   const lessonId = +urlParams.get('id');
 
-  const [lessonsDataResponse, lessonInfoResponse] = await Promise.all([
+  const [lessonsDataResponse, lessonInfoResponse, lessonsMediaResponse] = await Promise.all([
     fetch('../assets/json/lessons-data.json'),
-    fetch('../assets/json/lesson-info.json')
+    fetch('../assets/json/lesson-info.json'),
+    fetch('../assets/json/lessons-media.json')
   ]);
 
-  const [lessonsData, lessonInfo] = await Promise.all([
+  const [lessonsData, lessonInfo, lessonsMedia] = await Promise.all([
     lessonsDataResponse.json(),
-    lessonInfoResponse.json()
+    lessonInfoResponse.json(),
+    lessonsMediaResponse.json()
   ]);
 
   const lesson = lessonsData.find(lesson => lesson.id === lessonId);
-
-  displayLessonInfo(lesson, lessonInfo);
+  return { lesson, lessonInfo, lessonsData, lessonsMedia };
 }
 
+let addMediaBtn = document.getElementById('add-media-btn');
 
-function displayLessonInfo(lesson, lessonInfo) {
+addMediaBtn.addEventListener('click', function () {
+  let mediaModal = new bootstrap.Modal(document.getElementById('mediaModal'));
+  mediaModal.show();
+});
+const modalCardsContent = document.getElementById('modalCardsContent');
+let mediaModal = new bootstrap.Modal(document.getElementById('mediaModal'));
+let mediaModalCards = new bootstrap.Modal(document.getElementById('mediaModalCards'))
+
+window.onload = function () {
+  mediaModal.show();
+}
+
+const firstCard = document.querySelector('#mediaModal .card:first-child');
+firstCard.addEventListener('click', function () {
+  mediaModal.hide();
+  mediaModalCards.show();
+});
+
+function displayLessonInfo(lessons, lessonInfo, lesson) {
+  modalCardsContent.innerHTML = '';
+  lessons.forEach(lesson => {
+    modalCardsContent.innerHTML += `
+      <div class="col mb-3" title="add Media">
+        <div class="card" id="media" data-lesson-id="${lesson.id}">
+          <img src="${lesson.image}" class="object-fit w-100" alt="..." />
+          <div class="card-body">
+            <p class="card-text text-body-secondary">
+              <span>${lesson.subject}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  const mediaCards = document.querySelectorAll('#media');
+  mediaCards.forEach(card => {
+    card.addEventListener('click', function () {
+      const lessonId = +card.getAttribute('data-lesson-id');
+      const clickedLesson = lessons.find(lesson => lesson.id === lessonId);
+      if (clickedLesson) {
+        lessonInfo.push(clickedLesson);
+        displayLessonData(lesson, lessonInfo);
+      }
+    });
+  });
+
+  const deleteButtons = document.querySelectorAll('#delete-media');
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', function (event) {
+      // event.stopPropagation(); // Prevent card click event from firing
+      const lessonId = +button.getAttribute('data-lesson-id');
+      const index = lessonInfo.findIndex(lesson => lesson.id === lessonId);
+      if (index !== -1) {
+        lessonInfo.splice(index, 1);
+        displayLessonData(lesson, lessonInfo);
+      }
+    });
+  });
+
+}
+
+(async function displayTitle() {
+  const { lesson } = await getLessonInfo();
+  const lessonTitle = document.getElementById('lessons-title');
+  lessonTitle.innerHTML = `<span class="fw-bold">${lesson.title} | ${lesson.class}</span>`;
+})();
+
+function displayLessonData(lesson, lessonInfo) {
   const lessonTitle = document.getElementById('lessons-title');
   const lessonData1 = document.getElementById('lesson-data-1');
   const lessonData2 = document.getElementById('lesson-data-2');
@@ -33,23 +101,37 @@ function displayLessonInfo(lesson, lessonInfo) {
   let lessonTitleHtml = `<span class="fw-bold">${lesson.title} | ${lesson.class}</span>`;
   lessonTitle.innerHTML = lessonTitleHtml;
 
+  lessonData1.innerHTML = '';
+
   // loop through the lesson data and display it on the page
   lessonInfo.forEach((data) => {
     let lessonDataHtml = `
       <div class="swiper-slide">
-        <img
-          src="${data.image}"
-          alt="Lesson Image"
-          class="img-fluid"
-        />
+        <div>
+        <span class="px-2 px-1 bg-light-green text-start text-white d-block w-100 pe-clicked">
+        <span id="delete-media" data-lesson-id="${data.id}">
+        <i class="fa-solid fa-trash-can fa-fw me-2"></i>
+        </span>
+        <span id="move-media">
+        <i class="fa-solid fa-up-down-left-right fa-fw"></i>
+        </span>
+        </span>
+          <img
+            src="${data.image}"
+            alt="Lesson Image"
+            class="img-fluid"
+          />
+        </div>
       </div>
     `;
     lessonData1.innerHTML += lessonDataHtml;
   });
 
+  lessonData2.innerHTML = '';
   lessonInfo.forEach((data) => {
-    let lessonDataHtml = `
+    lessonData2.innerHTML += `
     <div class="swiper-slide">
+    <h3 class="text-center mt-3">${data.question}</h3>
       <div class="row">
         <div class="image-container col">
           <img
@@ -118,13 +200,8 @@ function displayLessonInfo(lesson, lessonInfo) {
       </div>
       </div>
     `;
-    lessonData2.innerHTML += lessonDataHtml;
   });
 }
-
-
-getLessonInfo();
-
 
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 10,
@@ -136,6 +213,7 @@ var swiper = new Swiper(".mySwiper", {
     el: ".swiper-scrollbar",
     draggable: true,
   },
+  touchRatio: 0,
   autoHeight: true,
 });
 var swiper2 = new Swiper(".mySwiper2", {
@@ -231,3 +309,29 @@ interact('.dropzone').dropzone({
     event.target.classList.remove('drop-target');
   }
 });
+
+async function initializePage() {
+  const { lesson, lessonsMedia, lessonInfo } = await getLessonInfo();
+  displayLessonInfo(lessonsMedia, lessonInfo, lesson);
+  displayLessonData(lesson, lessonInfo)
+
+  const filterSelects = document.querySelectorAll('.form-select');
+  filterSelects.forEach(select => {
+    select.addEventListener('change', () => {
+      const typeFilter = document.querySelector('#type-filter').value;
+      const subjectFilter = document.querySelector('#subject-filter').value;
+      const ageFilter = document.querySelector('#age-filter').value;
+
+      let filteredLessons = lessonsMedia.filter(lesson => {
+        return (
+          (typeFilter === 'all' || lesson.type === typeFilter) &&
+          (subjectFilter === 'all' || lesson.subject === subjectFilter) &&
+          (ageFilter === 'all' || lesson.age.toString() === ageFilter)
+        );
+      });
+      displayLessonInfo(filteredLessons, lessonInfo, lesson);
+    });
+  });
+}
+
+initializePage();
